@@ -32,13 +32,29 @@ There are 3 subprojects in this repository, each responsible for different thing
 2. **index_builder**
 3. **search**
 
-You can run each through `python3 main.py` and see help using `python3 main.py -h`
+You can run each through `python3 main.py` and see nice help using `python3 main.py -h` (there you can discover, for example, what arguments to use for changing default filenames)
 
 ## corpus_parser
-This subproject parses raw LISA collection of documents into one nice documents.json with the following structure:
+This subproject parses raw LISA collection of documents into one **documents.json** (default name, could be changed) with the following structure:
 ```json
 [
 { "id": 1, "title": "...", "body": "..."},
 { "id": 2, "title": "...", "body": "..."},
 
 ]
+```
+
+## index_builer
+It creates an inverted index for documents in **documents.json** and stores it in **index.json** (default name, could be changed). The structure of result:
+```json
+{
+  "situat": [1, 3, 104  ],
+  "serious": [1, 32, 88  ]
+
+}
+```
+It uses SnowballStemmer from nltk for stemming.
+
+## search
+
+
