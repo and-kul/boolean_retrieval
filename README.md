@@ -16,7 +16,7 @@ Then you have to download *NLTK Data*, the easiest way to do it is using interac
 ```
 python3
 ```
-```
+```python
 >>> import nltk
 >>> nltk.download()
 ```
@@ -26,3 +26,19 @@ I use suggested LISA document collection, but there was one issue with this Corp
 After *Document 1992* and until the late *Document 1998* there was a mess: repetition of previous documents, missed document ids...
 So I’ve decided to remove everything in-between. In the **corpus_parser/Corpus** directory there is a fixed version.
 
+## Structure
+There are 3 subprojects in this repository, each responsible for different thing:
+1. **corpus_parser**
+2. **index_builder**
+3. **search**
+
+You can run each through `python3 main.py` and see help using `python3 main.py -h`
+
+## corpus_parser
+This subproject parses raw LISA collection of documents into one nice documents.json with the following structure:
+```json
+[
+{ "id": 1, "title": "...", "body": "..."},
+{ "id": 2, "title": "...", "body": "..."},
+
+]
